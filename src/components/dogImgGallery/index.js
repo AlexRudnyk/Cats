@@ -1,0 +1,1 @@
+export { DogImgGallery } from './DogImgGallery';
