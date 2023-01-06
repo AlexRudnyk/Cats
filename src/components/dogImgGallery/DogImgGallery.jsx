@@ -3,8 +3,13 @@ import { fetchDogs } from 'components/dogsApi/DogsApi';
 import { useState, useEffect } from 'react';
 import { List } from './DogImgGallery.styled';
 
-export const DogImgGallery = ({ page }) => {
+export const DogImgGallery = () => {
   const [dogs, setDogs] = useState([]);
+  const [page, setPage] = useState(1);
+
+  const handleLoadMoreClick = () => {
+    setPage(state => state + 1);
+  };
 
   useEffect(() => {
     async function fetchMyDogs() {
@@ -20,10 +25,18 @@ export const DogImgGallery = ({ page }) => {
   }, [page]);
 
   return (
-    <List>
-      {dogs.map(({ id, image, name, breed_group }) => (
-        <DogImgItem key={id} img={image.url} name={name} group={breed_group} />
-      ))}
-    </List>
+    <>
+      <List>
+        {dogs.map(({ id, image, name, breed_group }) => (
+          <DogImgItem
+            key={id}
+            img={image.url}
+            name={name}
+            group={breed_group}
+          />
+        ))}
+      </List>
+      <button onClick={handleLoadMoreClick}>Load more</button>
+    </>
   );
 };
