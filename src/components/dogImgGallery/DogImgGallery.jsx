@@ -1,5 +1,5 @@
 import { DogImgItem } from 'components/dogImgItem';
-import { fetchDogs } from 'components/dogsApi/DogsApi';
+import { getDogs } from 'components/dogsApi/DogsApi';
 import { useState, useEffect } from 'react';
 import { List, MoreBtn, BtnContainer } from './DogImgGallery.styled';
 import { Spinner } from 'components/spinner';
@@ -19,11 +19,10 @@ export const DogImgGallery = () => {
   };
 
   useEffect(() => {
-    async function fetchMyDogs() {
+    async function fetchDogs() {
       setStatus('pending');
       try {
-        const dogsArray = await fetchDogs(page);
-        console.log(dogsArray);
+        const dogsArray = await getDogs(page);
         setDogs(dogsArray);
         setStatus('resolved');
       } catch (error) {
@@ -31,7 +30,7 @@ export const DogImgGallery = () => {
         setStatus('rejected');
       }
     }
-    fetchMyDogs();
+    fetchDogs();
   }, [page]);
 
   return (
