@@ -24,7 +24,7 @@ export const DescriptionContainer = styled.div`
   padding: 10px;
 `;
 
-export const ItemText = styled.p`
+export const ItemText = styled.h4`
   :not(:last-child) {
     margin-bottom: 10px;
   }

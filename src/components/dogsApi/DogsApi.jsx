@@ -10,10 +10,3 @@ export const fetchDogs = async page => {
   );
   return response.data;
 };
-
-// export const fetchNextPage = async page => {
-//   const response = await axios.get(
-//     `${BASE_URL}?api_key=${API_KEY}&limit=12&page=${page}`
-//   );
-//   return response.data;
-// };

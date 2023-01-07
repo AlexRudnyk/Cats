@@ -11,11 +11,7 @@ export const DogImgItem = ({ img, name, group }) => {
       <Image src={img} alt={name} />
       <DescriptionContainer>
         <ItemText>{name}</ItemText>
-        {!group ? (
-          <ItemText>Breed group: Unknown</ItemText>
-        ) : (
-          <p>Breed group: {group}</p>
-        )}
+        {!group ? <p>Breed group: Unknown</p> : <p>Breed group: {group}</p>}
       </DescriptionContainer>
     </Item>
   );
