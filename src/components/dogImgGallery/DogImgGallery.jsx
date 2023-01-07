@@ -1,7 +1,7 @@
 import { DogImgItem } from 'components/dogImgItem';
 import { fetchDogs } from 'components/dogsApi/DogsApi';
 import { useState, useEffect } from 'react';
-import { List } from './DogImgGallery.styled';
+import { List, MoreBtn, BtnContainer } from './DogImgGallery.styled';
 
 export const DogImgGallery = () => {
   const [dogs, setDogs] = useState([]);
@@ -36,7 +36,9 @@ export const DogImgGallery = () => {
           />
         ))}
       </List>
-      <button onClick={handleLoadMoreClick}>Load more</button>
+      <BtnContainer>
+        <MoreBtn onClick={handleLoadMoreClick}>Load more</MoreBtn>
+      </BtnContainer>
     </>
   );
 };
