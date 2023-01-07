@@ -10,3 +10,8 @@ export const fetchDogs = async page => {
   );
   return response.data;
 };
+
+export const fetchBreeds = async () => {
+  const response = await axios.get(`${BASE_URL}?api_key=${API_KEY}`);
+  return response.data;
+};
