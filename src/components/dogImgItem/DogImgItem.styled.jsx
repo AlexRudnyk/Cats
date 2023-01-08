@@ -29,3 +29,61 @@ export const ItemText = styled.h4`
     margin-bottom: 10px;
   }
 `;
+
+export const ModalContentWrapper = styled.div`
+  display: flex;
+  margin-top: 30px;
+`;
+
+export const ModalImg = styled.img`
+  width: 300px;
+  margin-right: 30px;
+`;
+
+export const ModalDetailsWrapper = styled.div`
+  padding: 0 30px;
+  border-left: 1px solid gray;
+`;
+
+export const BreedTitle = styled.h2`
+  margin-bottom: 30px;
+  text-decoration: underline;
+`;
+
+export const BreedText = styled.p`
+  :not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  box-shadow: 0px 6px 6px 0px #ff6a00;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+
+  font-size: 16px;
+  color: #000000;
+
+  transition: all 250ms linear;
+
+  &:focus,
+  &:hover {
+    background-color: #ff6a00;
+    border: 1px solid transparent;
+    // fill: var(--main-bg-cl);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+`;

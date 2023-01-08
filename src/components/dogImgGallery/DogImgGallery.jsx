@@ -39,14 +39,31 @@ export const DogImgGallery = () => {
       {status === 'resolved' && (
         <>
           <List>
-            {dogs.map(({ id, image, name, breed_group }) => (
-              <DogImgItem
-                key={id}
-                img={image.url}
-                name={name}
-                group={breed_group}
-              />
-            ))}
+            {dogs.map(
+              ({
+                id,
+                image,
+                name,
+                breed_group,
+                bred_for,
+                height,
+                life_span,
+                temperament,
+                weight,
+              }) => (
+                <DogImgItem
+                  key={id}
+                  img={image.url}
+                  name={name}
+                  group={breed_group}
+                  skill={bred_for}
+                  height={height.metric}
+                  life={life_span}
+                  temperament={temperament}
+                  weight={weight.metric}
+                />
+              )
+            )}
           </List>
           <BtnContainer>
             {page !== 1 && (
