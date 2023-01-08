@@ -6,7 +6,14 @@ import {
 } from 'components/dogsApi/DogsApi';
 import { Spinner } from 'components/spinner';
 import { Error } from 'components/error';
-import { BreedSelect, ImgWrapper } from './Breeds.styled';
+import {
+  BreedSelect,
+  ImgWrapper,
+  BreedsContainer,
+  BreedText,
+  BreedTitle,
+  BreedDescriptionWrapper,
+} from './Breeds.styled';
 
 export const Breeds = () => {
   const [breeds, setBreeds] = useState([]);
@@ -69,8 +76,6 @@ export const Breeds = () => {
     fetchInfoById();
   }, [selectedBreed]);
 
-  console.log('BREED INFO: ', breedInfo);
-
   return (
     <div>
       {status === 'pending' && <Spinner />}
@@ -82,42 +87,55 @@ export const Breeds = () => {
               onChange={option => setSelectedBreed(option.value)}
             />
           )}
-          {dog.length !== 0 && (
-            <ImgWrapper>
-              <img src={dog.url} alt="dog" width="500" />
-            </ImgWrapper>
-          )}
-          {breedInfo && (
-            <>
-              <h2>Dog's breed details</h2>
-              <p>
-                My breed is: <strong>{breedInfo.name}</strong>
-              </p>
-              <p>
-                I am from <strong>{breedInfo.breed_group}</strong> family of
-                breeds
-              </p>
-              {breedInfo.origin && (
-                <p>
-                  My home is: <strong>{breedInfo.origin}</strong>
-                </p>
-              )}
-              <p>
-                My height is: <strong>{breedInfo.height.metric}</strong>{' '}
-                centimeters
-              </p>
-              <p>
-                My weight is: <strong>{breedInfo.weight.metric}</strong>{' '}
-                kilograms
-              </p>
-              <p>
-                I am <strong>{breedInfo.temperament}</strong>
-              </p>
-              <p>
-                and will make you happy <strong>{breedInfo.life_span}</strong>
-              </p>
-            </>
-          )}
+          <BreedsContainer>
+            {dog.length !== 0 && (
+              <ImgWrapper>
+                <img src={dog.url} alt="dog" width="500" />
+              </ImgWrapper>
+            )}
+            {breedInfo && (
+              <BreedDescriptionWrapper>
+                <BreedTitle>Dog's breed details</BreedTitle>
+                {breedInfo.name && (
+                  <BreedText>
+                    My breed is: <strong>{breedInfo.name}</strong>
+                  </BreedText>
+                )}
+                {breedInfo.breed_group && (
+                  <BreedText>
+                    I am from <strong>{breedInfo.breed_group}</strong> family of
+                    breeds
+                  </BreedText>
+                )}
+                {breedInfo.origin && (
+                  <BreedText>
+                    My home is: <strong>{breedInfo.origin}</strong>
+                  </BreedText>
+                )}
+                <BreedText>
+                  My height is: <strong>{breedInfo.height.metric}</strong>{' '}
+                  centimeters
+                </BreedText>
+                {breedInfo.weight.metric && (
+                  <BreedText>
+                    My weight is: <strong>{breedInfo.weight.metric}</strong>{' '}
+                    kilograms
+                  </BreedText>
+                )}
+                {breedInfo.temperament && (
+                  <BreedText>
+                    I am <strong>{breedInfo.temperament}</strong>
+                  </BreedText>
+                )}
+                {breedInfo.life_span && (
+                  <BreedText>
+                    and will make you happy{' '}
+                    <strong>{breedInfo.life_span}</strong>
+                  </BreedText>
+                )}
+              </BreedDescriptionWrapper>
+            )}
+          </BreedsContainer>
         </>
       )}
       {status === 'rejected' && <Error />}
