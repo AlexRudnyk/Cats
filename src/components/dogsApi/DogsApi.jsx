@@ -22,3 +22,10 @@ export const getBreedsById = async id => {
   );
   return response.data;
 };
+
+export const getInfoById = async id => {
+  const response = await axios.get(
+    `${BASE_URL}breeds/${id}?api_key=${API_KEY}`
+  );
+  return response.data;
+};

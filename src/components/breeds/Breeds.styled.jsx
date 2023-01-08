@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Select from 'react-select';
 
 export const BreedSelect = styled(Select)`
-  width: 700px;
+  width: 500px;
   margin-top: 30px;
 `;
 

@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { getBreeds, getBreedsById } from 'components/dogsApi/DogsApi';
+import {
+  getBreeds,
+  getBreedsById,
+  getInfoById,
+} from 'components/dogsApi/DogsApi';
 import { Spinner } from 'components/spinner';
 import { Error } from 'components/error';
 import { BreedSelect, ImgWrapper } from './Breeds.styled';
@@ -9,6 +13,7 @@ export const Breeds = () => {
   const [selectedBreed, setSelectedBreed] = useState(null);
   const [dog, setDog] = useState([]);
   const [status, setStatus] = useState('idle');
+  const [breedInfo, setBreedInfo] = useState(null);
 
   useEffect(() => {
     async function fetchBreeds() {
@@ -47,6 +52,25 @@ export const Breeds = () => {
     fetchBreedById();
   }, [selectedBreed]);
 
+  useEffect(() => {
+    if (selectedBreed === null) return;
+    setStatus('pending');
+
+    async function fetchInfoById() {
+      try {
+        const infoById = await getInfoById(selectedBreed);
+        setBreedInfo(infoById);
+        setStatus('resolved');
+      } catch (error) {
+        console.log(error.message);
+        setStatus('rejected');
+      }
+    }
+    fetchInfoById();
+  }, [selectedBreed]);
+
+  console.log('BREED INFO: ', breedInfo);
+
   return (
     <div>
       {status === 'pending' && <Spinner />}
@@ -60,8 +84,39 @@ export const Breeds = () => {
           )}
           {dog.length !== 0 && (
             <ImgWrapper>
-              <img src={dog.url} alt="dog" width="700" />
+              <img src={dog.url} alt="dog" width="500" />
             </ImgWrapper>
+          )}
+          {breedInfo && (
+            <>
+              <h2>Dog's breed details</h2>
+              <p>
+                My breed is: <strong>{breedInfo.name}</strong>
+              </p>
+              <p>
+                I am from <strong>{breedInfo.breed_group}</strong> family of
+                breeds
+              </p>
+              {breedInfo.origin && (
+                <p>
+                  My home is: <strong>{breedInfo.origin}</strong>
+                </p>
+              )}
+              <p>
+                My height is: <strong>{breedInfo.height.metric}</strong>{' '}
+                centimeters
+              </p>
+              <p>
+                My weight is: <strong>{breedInfo.weight.metric}</strong>{' '}
+                kilograms
+              </p>
+              <p>
+                I am <strong>{breedInfo.temperament}</strong>
+              </p>
+              <p>
+                and will make you happy <strong>{breedInfo.life_span}</strong>
+              </p>
+            </>
           )}
         </>
       )}
