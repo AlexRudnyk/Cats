@@ -18,14 +18,14 @@ export const AppBarContainer = styled.div`
     padding: 20px;
   }
   @media screen and (${device.desktop}) {
-    width: 1200px;
+    width: 1160px;
     padding: 20px;
   }
 `;
 
 export const HeaderLogo = styled.img`
   @media screen and (${device.mobile_only}) {
-    width: 50px;
+    width: 70px;
     margin-right: 10px;
   }
   @media screen and (${device.tablet}) {
@@ -85,9 +85,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const HeaderTitle = styled.h2`
-  font-size: 16px;
-
-    @media screen and (${device.mobile}) {
+  @media screen and (${device.mobile_only}) {
   font-size: 20px;
     }
   }

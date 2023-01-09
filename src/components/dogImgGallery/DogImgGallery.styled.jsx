@@ -1,9 +1,23 @@
 import styled from 'styled-components';
+import { device } from 'constants/breakpoints';
 
 export const GalleryContainer = styled.div`
-  width: 1200px;
+  // width: 1200px;
   margin: 0 auto;
   padding: 15px;
+
+  @media screen and (${device.mobile}) {
+    width: 440px;
+    padding: 20px;
+  }
+  @media screen and (${device.tablet}) {
+    width: 728px;
+    padding: 20px;
+  }
+  @media screen and (${device.desktop}) {
+    width: 1160px;
+    padding: 20px;
+  }
 `;
 
 export const List = styled.ul`
