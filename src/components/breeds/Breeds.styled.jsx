@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import Select from 'react-select';
 
+export const BreedsWrapper = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+`;
+
 export const BreedSelect = styled(Select)`
   width: 500px;
   margin-top: 30px;

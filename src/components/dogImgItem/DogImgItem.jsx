@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Modal } from 'components/modal';
+import { VscChromeClose } from 'react-icons/vsc';
 import {
   Item,
   Image,
@@ -41,7 +42,7 @@ export const DogImgItem = ({
       {showModal && (
         <Modal onClose={toggleModal}>
           <Button type="button" onClick={toggleModal}>
-            X
+            <VscChromeClose />
           </Button>
           <ModalContentWrapper>
             <div>

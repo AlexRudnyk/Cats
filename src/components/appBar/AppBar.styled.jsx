@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 
-export const AppContainer = styled.div`
+export const AppBarContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 15px;
   justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
 `;
 
 export const HeaderLogo = styled.img`
@@ -35,13 +37,6 @@ export const StyledLink = styled(Link)`
 `;
 
 export const StyledHeader = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  padding-right: 30px;
-  margin-right: auto;
-  margin-left: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
     23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 `;

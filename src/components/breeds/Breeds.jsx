@@ -13,6 +13,7 @@ import {
   BreedText,
   BreedTitle,
   BreedDescriptionWrapper,
+  BreedsWrapper,
 } from './Breeds.styled';
 
 export const Breeds = () => {
@@ -77,7 +78,7 @@ export const Breeds = () => {
   }, [selectedBreed]);
 
   return (
-    <div>
+    <BreedsWrapper>
       {status === 'pending' && <Spinner />}
       {status === 'resolved' && (
         <>
@@ -139,6 +140,6 @@ export const Breeds = () => {
         </>
       )}
       {status === 'rejected' && <Error />}
-    </div>
+    </BreedsWrapper>
   );
 };

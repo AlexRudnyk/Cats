@@ -1,7 +1,12 @@
 import { DogImgItem } from 'components/dogImgItem';
 import { getDogs } from 'components/dogsApi/DogsApi';
 import { useState, useEffect } from 'react';
-import { List, MoreBtn, BtnContainer } from './DogImgGallery.styled';
+import {
+  List,
+  MoreBtn,
+  BtnContainer,
+  GalleryContainer,
+} from './DogImgGallery.styled';
 import { Spinner } from 'components/spinner';
 import { Error } from 'components/error';
 
@@ -38,33 +43,35 @@ export const DogImgGallery = () => {
       {status === 'pending' && <Spinner />}
       {status === 'resolved' && (
         <>
-          <List>
-            {dogs.map(
-              ({
-                id,
-                image,
-                name,
-                breed_group,
-                bred_for,
-                height,
-                life_span,
-                temperament,
-                weight,
-              }) => (
-                <DogImgItem
-                  key={id}
-                  img={image.url}
-                  name={name}
-                  group={breed_group}
-                  skill={bred_for}
-                  height={height.metric}
-                  life={life_span}
-                  temperament={temperament}
-                  weight={weight.metric}
-                />
-              )
-            )}
-          </List>
+          <GalleryContainer>
+            <List>
+              {dogs.map(
+                ({
+                  id,
+                  image,
+                  name,
+                  breed_group,
+                  bred_for,
+                  height,
+                  life_span,
+                  temperament,
+                  weight,
+                }) => (
+                  <DogImgItem
+                    key={id}
+                    img={image.url}
+                    name={name}
+                    group={breed_group}
+                    skill={bred_for}
+                    height={height.metric}
+                    life={life_span}
+                    temperament={temperament}
+                    weight={weight.metric}
+                  />
+                )
+              )}
+            </List>
+          </GalleryContainer>
           <BtnContainer>
             {page !== 1 && (
               <MoreBtn

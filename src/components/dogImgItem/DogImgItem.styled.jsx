@@ -70,7 +70,7 @@ export const Button = styled.button`
   height: 40px;
 
   border-radius: 50%;
-  box-shadow: 0px 6px 6px 0px #ff6a00;
+  box-shadow: 0px 6px 6px 0px #027df7;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
 
@@ -81,9 +81,9 @@ export const Button = styled.button`
 
   &:focus,
   &:hover {
-    background-color: #ff6a00;
+    background-color: #027df7;
     border: 1px solid transparent;
-    // fill: var(--main-bg-cl);
+    color: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;

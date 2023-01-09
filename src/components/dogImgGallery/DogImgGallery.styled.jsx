@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const GalleryContainer = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+`;
+
 export const List = styled.ul`
   display: grid;
   max-width: calc(100vw - 48px);
