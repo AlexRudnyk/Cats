@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { device } from 'constants/breakpoints';
 
 export const GalleryContainer = styled.div`
-  // width: 1200px;
   margin: 0 auto;
   padding: 15px;
 

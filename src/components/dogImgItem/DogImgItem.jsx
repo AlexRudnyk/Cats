@@ -53,7 +53,7 @@ export const DogImgItem = ({
               <BreedTitle>Dog's breed details</BreedTitle>
               {name && (
                 <BreedText>
-                  My breed name is: <strong>{name}</strong>
+                  My breed is: <strong>{name}</strong>
                 </BreedText>
               )}
               {group && (

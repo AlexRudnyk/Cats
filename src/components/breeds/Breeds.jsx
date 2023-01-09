@@ -14,6 +14,7 @@ import {
   BreedTitle,
   BreedDescriptionWrapper,
   BreedsWrapper,
+  BreedImg,
 } from './Breeds.styled';
 
 export const Breeds = () => {
@@ -91,7 +92,7 @@ export const Breeds = () => {
           <BreedsContainer>
             {dog.length !== 0 && (
               <ImgWrapper>
-                <img src={dog.url} alt="dog" width="500" />
+                <BreedImg src={dog.url} alt={dog.name} />
               </ImgWrapper>
             )}
             {breedInfo && (
