@@ -1,3 +1,4 @@
+import { device } from 'constants/breakpoints';
 import styled from 'styled-components';
 
 export const Overlay = styled.div`
@@ -15,9 +16,23 @@ export const Overlay = styled.div`
 
 export const ModalWindow = styled.div`
   position: relative;
-  width: 700px;
-  height: 500px;
   background-color: white;
   border-radius: 5px;
   padding: 20px;
+
+  @media screen and (${device.mobile_only}) {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+  }
+  @media screen and (${device.tablet}) {
+    width: calc(100vw - 160px);
+    height: calc(100vh - 160px);
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+  @media screen and (${device.desktop}) {
+    width: 700px;
+    height: 500px;
+  }
 `;

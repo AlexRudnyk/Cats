@@ -54,7 +54,7 @@ export const StyledNavLink = styled(NavLink)`
 
   @media screen and (${device.mini}) {
     padding: 6px;
-    font-size: 12px;
+    font-size: 16px;
 
     :not(:last-child) {
       margin-right: 10px;

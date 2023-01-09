@@ -12,6 +12,7 @@ import {
   BreedTitle,
   BreedText,
   Button,
+  ModalImgWrapper,
 } from './DogImgItem.styled';
 
 export const DogImgItem = ({
@@ -45,9 +46,9 @@ export const DogImgItem = ({
             <VscChromeClose />
           </Button>
           <ModalContentWrapper>
-            <div>
+            <ModalImgWrapper>
               <ModalImg src={img} alt={name} />
-            </div>
+            </ModalImgWrapper>
             <ModalDetailsWrapper>
               <BreedTitle>Dog's breed details</BreedTitle>
               {name && (

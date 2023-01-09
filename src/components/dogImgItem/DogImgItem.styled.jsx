@@ -1,3 +1,4 @@
+import { device } from 'constants/breakpoints';
 import styled from 'styled-components';
 
 export const Item = styled.li`
@@ -31,18 +32,54 @@ export const ItemText = styled.h4`
 `;
 
 export const ModalContentWrapper = styled.div`
-  display: flex;
-  margin-top: 30px;
+  // display: flex;
+  // margin-top: 30px;
+
+  @media screen and (${device.mobile_only}) {
+    margin-top: 40px;
+  }
+  @media screen and (${device.tablet}) {
+    display: flex;
+    margin-top: 40px;
+  }
+`;
+
+export const ModalImgWrapper = styled.div`
+  @media screen and (${device.mobile_only}) {
+    margin-bottom: 30px;
+  }
+  @media screen and (${device.tablet}) {
+    margin-right: 30px;
+  }
+  @media screen and (${device.desktop}) {
+    margin-right: 30px;
+  }
 `;
 
 export const ModalImg = styled.img`
-  width: 300px;
-  margin-right: 30px;
+  @media screen and (${device.mobile_only}) {
+    width: 100%;
+  }
+  @media screen and (${device.tablet}) {
+    width: 100%;
+    max-width: 400px;
+  }
+  @media screen and (${device.desktop}) {
+    width: 100%;
+    max-width: 500px;
+  }
 `;
 
 export const ModalDetailsWrapper = styled.div`
-  padding: 0 30px;
-  border-left: 1px solid gray;
+  @media screen and (${device.tablet}) {
+    padding-left: 30px;
+    border-left: 1px solid grey;
+  }
+
+  @media screen and (${device.desktop}) {
+    padding-left: 30px;
+    border-left: 1px solid grey;
+  }
 `;
 
 export const BreedTitle = styled.h2`
