@@ -26,8 +26,8 @@ export const ModalWindow = styled.div`
     overflow-y: scroll;
   }
   @media screen and (${device.tablet}) {
-    width: calc(100vw - 160px);
-    height: calc(100vh - 160px);
+    width: calc(100vw - 80px);
+    height: calc(100vh - 80px);
     max-height: 500px;
     overflow-y: scroll;
   }
