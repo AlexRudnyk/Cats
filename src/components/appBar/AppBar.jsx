@@ -4,6 +4,8 @@ import {
   StyledLink,
   StyledHeader,
   AppBarContainer,
+  HeaderTitle,
+  HeaderNav,
 } from './AppBar.styled';
 import logo from '../../../src/images/logo/dog-logo.png';
 
@@ -13,12 +15,12 @@ export const AppBar = () => {
       <AppBarContainer>
         <StyledLink to="/">
           <HeaderLogo src={logo} alt="logo-image" />
-          <h1>Dog Collection</h1>
+          <HeaderTitle>Dog Collection</HeaderTitle>
         </StyledLink>
-        <nav>
+        <HeaderNav>
           <StyledNavLink to="/">Home</StyledNavLink>
           <StyledNavLink to="/breeds">Breeds</StyledNavLink>
-        </nav>
+        </HeaderNav>
       </AppBarContainer>
     </StyledHeader>
   );
