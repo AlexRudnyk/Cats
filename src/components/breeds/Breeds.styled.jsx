@@ -91,3 +91,7 @@ export const BreedDescriptionWrapper = styled.div`
     border-left: 1px solid grey;
   }
 `;
+
+export const SearchImg = styled.img`
+  width: 100%;
+`;
