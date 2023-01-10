@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/dogs/static/css/main.b6e70b05.css",
-    "main.js": "/dogs/static/js/main.5e117caa.js",
+    "main.js": "/dogs/static/js/main.e9bd31c7.js",
+    "static/media/SearchBig.jpg": "/dogs/static/media/SearchBig.300998de6c0bd3da63ae.jpg",
     "static/media/dog-logo.png": "/dogs/static/media/dog-logo.12f53ae3051d8ec27b70.png",
     "index.html": "/dogs/index.html",
     "main.b6e70b05.css.map": "/dogs/static/css/main.b6e70b05.css.map",
-    "main.5e117caa.js.map": "/dogs/static/js/main.5e117caa.js.map"
+    "main.e9bd31c7.js.map": "/dogs/static/js/main.e9bd31c7.js.map"
   },
   "entrypoints": [
     "static/css/main.b6e70b05.css",
-    "static/js/main.5e117caa.js"
+    "static/js/main.e9bd31c7.js"
   ]
 }
