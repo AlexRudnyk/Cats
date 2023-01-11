@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Select from 'react-select';
 import { device } from 'constants/breakpoints';
+import search from '../../images/Search.jpg';
+import searchBig from '../../images/SearchBig.jpg';
 
 export const BreedsWrapper = styled.div`
   margin: 0 auto;
@@ -92,6 +94,17 @@ export const BreedDescriptionWrapper = styled.div`
   }
 `;
 
-export const SearchImg = styled.img`
+export const SearchImgWrapper = styled.div`
   width: 100%;
+  height: 100vh;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media screen and (${device.mobile_only}) {
+    background-image: url(${search});
+  }
+  @media screen and (${device.tablet}) {
+    background-image: url(${searchBig});
+  }
 `;

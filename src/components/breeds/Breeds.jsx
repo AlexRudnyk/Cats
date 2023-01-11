@@ -6,7 +6,6 @@ import {
 } from 'components/dogsApi/DogsApi';
 import { Spinner } from 'components/spinner';
 import { Error } from 'components/error';
-import searchImg from '../../images/SearchBig.jpg';
 import {
   BreedSelect,
   ImgWrapper,
@@ -16,7 +15,7 @@ import {
   BreedDescriptionWrapper,
   BreedsWrapper,
   BreedImg,
-  SearchImg,
+  SearchImgWrapper,
 } from './Breeds.styled';
 
 export const Breeds = () => {
@@ -92,7 +91,7 @@ export const Breeds = () => {
             />
           )}
           <BreedsContainer>
-            {dog.length === 0 && <SearchImg src={searchImg} alt="Search" />}
+            {dog.length === 0 && <SearchImgWrapper></SearchImgWrapper>}
             {dog.length !== 0 && (
               <ImgWrapper>
                 <BreedImg src={dog.url} alt={dog.name} />
