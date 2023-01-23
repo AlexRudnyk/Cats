@@ -7,7 +7,7 @@ import {
   HeaderTitle,
   HeaderNav,
 } from './AppBar.styled';
-import logo from '../../../src/images/logo/dog-logo.png';
+import logo from '../../../src/images/photo_2023-01-23_10-30-02.jpg';
 
 export const AppBar = () => {
   return (

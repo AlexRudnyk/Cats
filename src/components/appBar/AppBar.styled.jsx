@@ -24,6 +24,10 @@ export const AppBarContainer = styled.div`
 `;
 
 export const HeaderLogo = styled.img`
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
   @media screen and (${device.mobile_only}) {
     width: 70px;
     margin-right: 10px;
@@ -85,6 +89,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const HeaderTitle = styled.h2`
+
   @media screen and (${device.mobile_only}) {
   font-size: 20px;
     }
